@@ -18,10 +18,12 @@ decipher the kind of meme the user wants, and the displays it
 * rust calls imgur for memes
 * rust calls feh/jp2a for displaying the meme
 
+# Idea 3
+Random image from r/aww display on a website
+
 # Other Ideas
 
 * Dynamic learning machines:generate recommendations based on user response
-* Website building
 * Simple game: care for virtual plants
 * Generate random choose your own adeventure game with front end
 * Riddle generator by algorithmn
