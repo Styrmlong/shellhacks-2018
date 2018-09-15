@@ -1,6 +1,7 @@
 use std::process::Command;
 use structopt::StructOpt;
 
+const URL: &'static str = "https://api.imgur.com/3/gallery/r/";
 const KEY: &'static str = "b0a99d409f4d35a";
 const PYTHON: &'static str = include_str!("test.py");
 
@@ -23,24 +24,44 @@ struct Opt {
 }
 
 fn main() {
-    let opt = Opt::from_args();
-    println!("{:?}", opt);
+    let _opt = Opt::from_args();
 
     println!("Please tell me a command :D");
-    println!("{}", PYTHON);
     // call python process
-    let cmd = Command::new("python")
-        .arg("-c")
-        .arg(include_str!("test.py"))
-        .output().expect("failed to run python");
+    let voice = get_voice();
 
-    println!("{:?}", cmd.stdout);
     // Get python result
-    println!("You said: {}", "stuff");
-    print!("Did I get that wrong?: ");
+    println!("You said: {}", voice);
     // loop until it works
+    // print!("Did I get that wrong?: ");
     println!("Ok, grabbing your meme now :D");
     // grab the image from imgur
+    let url = get_image_url();
     // decide where to put it
     // call feh / jp2a
+}
+
+fn get_voice() -> String {
+    String::from_utf8(
+        Command::new("python")
+            .arg("-c")
+            .arg(PYTHON)
+            .output()
+            .expect("failed to run python")
+            .stdout,
+    ).expect("Not UTF8 Text!")
+}
+
+fn get_image_url() -> String {
+    use reqwest::header;
+    let mut headers = header::Headers::new();
+    headers.set(header::Authorization(String::from(KEY)));
+
+    let client = reqwest::Client::builder().default_headers(headers).build().expect("Unable to build client");
+
+    let res = client.get(&(String::from(URL) + "aww")).send().expect("Didn't get a response! ;(");
+
+    println!("{:?}", res);
+
+    String::new()
 }

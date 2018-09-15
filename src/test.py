@@ -3,7 +3,6 @@ import sys
 
 r = sr.Recognizer()
 with sr.Microphone() as source:
-    print("Speak Anything :")
     audio = r.listen(source)
     try:
         text = r.recognize_google(audio)
