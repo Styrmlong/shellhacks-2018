@@ -7,3 +7,4 @@ Some kind of pizza ordering web app thingy
 * Voice to pizza
 * Show desired pizza from voice understanding
 * Ask to order pizza
+* use dominoes api to order said pizza
