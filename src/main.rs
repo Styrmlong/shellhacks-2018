@@ -36,27 +36,6 @@ struct Opt {
     display: String,
 }
 
-fn get_meme(stdin: &mut StdinLock) -> String {
-    let mut buffer = String::new();
-    println!("Please tell me a command :D");
-    // call python process
-    let voice = get_voice();
-
-    // Get python result
-    println!("You said: {}", voice);
-    // loop until it works
-    print!("Did I get that wrong?: (Y/n)");
-    stdin
-        .read_to_string(&mut buffer)
-        .expect("unable to read input");
-
-    if buffer.to_lowercase() == "n" {
-        voice
-    } else {
-        get_meme(stdin)
-    }
-}
-
 fn main() {
     let opt = Opt::from_args();
 
@@ -87,6 +66,27 @@ fn get_voice() -> String {
             .expect("failed to run python")
             .stdout,
     ).expect("Not UTF8 Text!")
+}
+
+fn get_meme(stdin: &mut StdinLock) -> String {
+    let mut buffer = String::new();
+    println!("Please tell me a command :D");
+    // call python process
+    let voice = get_voice();
+
+    // Get python result
+    println!("You said: {}", voice);
+    // loop until it works
+    print!("Did I get that wrong?: (Y/n)");
+    stdin
+        .read_to_string(&mut buffer)
+        .expect("unable to read input");
+
+    if buffer.to_lowercase() == "n" {
+        voice
+    } else {
+        get_meme(stdin)
+    }
 }
 
 fn get_image_url(sub_reddit: &str) -> String {
