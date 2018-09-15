@@ -1,7 +1,11 @@
 [package]
 name = "memer"
 version = "0.1.0"
-authors = ["Victor M. Suarez <svmnotn@gmail.com>"]
+description = """
+memer is a meme displaying software that allows users to see the memes \
+that they've asked for.
+"""
+authors = ["Victor M. Suarez <svmnotn@gmail.com>", "contributors"]
 edition = "2018"
 
 [dependencies]

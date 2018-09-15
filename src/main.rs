@@ -1,8 +1,11 @@
+use std::fs::File;
+use std::io::{self, Read, StdinLock};
+use std::path::PathBuf;
 use std::process::Command;
 use structopt::StructOpt;
 
 const URL: &'static str = "https://api.imgur.com/3/gallery/r/";
-const KEY: &'static str = "b0a99d409f4d35a";
+const KEY: &'static str = "Client-ID b0a99d409f4d35a";
 const PYTHON: &'static str = include_str!("test.py");
 
 #[derive(Debug, StructOpt)]
@@ -15,17 +18,26 @@ struct Opt {
         long = "meme-src"
     )]
     default_meme_src: String,
-    /// Should we display the meme using feh?
-    #[structopt(short = "f", long = "feh")]
-    use_feh: bool,
-    /// Should we display the meme using jp2a? doesn't always work
-    #[structopt(short = "j", long = "jp2a")]
-    use_jp2a: bool,
+    /// Where to store the memes
+    #[structopt(
+        parse(from_os_str),
+        name = "storage",
+        default_value = ".",
+        short = "p",
+        long = "path"
+    )]
+    storage: PathBuf,
+    /// How should we display the meme?
+    #[structopt(
+        default_value = "google-chrome-stable",
+        short = "d",
+        long = "display"
+    )]
+    display: String,
 }
 
-fn main() {
-    let _opt = Opt::from_args();
-
+fn get_meme(stdin: &mut StdinLock) -> String {
+    let mut buffer = String::new();
     println!("Please tell me a command :D");
     // call python process
     let voice = get_voice();
@@ -33,12 +45,37 @@ fn main() {
     // Get python result
     println!("You said: {}", voice);
     // loop until it works
-    // print!("Did I get that wrong?: ");
+    print!("Did I get that wrong?: (Y/n)");
+    stdin
+        .read_to_string(&mut buffer)
+        .expect("unable to read input");
+
+    if buffer.to_lowercase() == "n" {
+        voice
+    } else {
+        get_meme(stdin)
+    }
+}
+
+fn main() {
+    let opt = Opt::from_args();
+
+    let stdin = io::stdin();
+    let mut handle = stdin.lock();
+
+    // grab what the user wants to see
+    let _meme = get_meme(&mut handle);
+
     println!("Ok, grabbing your meme now :D");
     // grab the image from imgur
-    let url = get_image_url();
-    // decide where to put it
-    // call feh / jp2a
+    let url = get_image_url(&opt.default_meme_src);
+    let file = get_file(&url);
+
+    // show it
+    Command::new(&opt.display)
+        .arg(&file)
+        .spawn()
+        .expect("Unable to display meme");
 }
 
 fn get_voice() -> String {
@@ -52,16 +89,51 @@ fn get_voice() -> String {
     ).expect("Not UTF8 Text!")
 }
 
-fn get_image_url() -> String {
+fn get_image_url(sub_reddit: &str) -> String {
     use reqwest::header;
     let mut headers = header::Headers::new();
     headers.set(header::Authorization(String::from(KEY)));
 
-    let client = reqwest::Client::builder().default_headers(headers).build().expect("Unable to build client");
+    let client = reqwest::Client::builder()
+        .default_headers(headers)
+        .build()
+        .expect("Unable to build client");
 
-    let res = client.get(&(String::from(URL) + "aww")).send().expect("Didn't get a response! ;(");
+    let mut res = client
+        .get(&(String::from(URL) + sub_reddit))
+        .send()
+        .expect("Didn't get a response! ;(");
 
-    println!("{:?}", res);
+    let json: serde_json::Value = res.json().expect("Unable to make JSON");
 
-    String::new()
+    random_link(json)
+}
+
+fn random_link(val: serde_json::Value) -> String {
+    use rand::Rng;
+    let mut rng = rand::thread_rng();
+    let n = rng.gen_range(
+        0,
+        val["data"].as_array().expect("data was not an array").len(),
+    );
+
+    String::from(
+        val["data"][n]["link"]
+            .as_str()
+            .expect("unable to find link"),
+    )
+}
+
+fn get_file(url: &str) -> PathBuf {
+    let name = reqwest::Url::parse(url).expect("unable to URL a URL");
+    let name = name
+        .path_segments()
+        .expect("No segments in the URL")
+        .last()
+        .expect("no last in a path");
+    let path = PathBuf::from(&name);
+    let mut file = File::create(&path).expect("unable to make file");
+    let mut resp = reqwest::get(url).expect("unable to get image");
+    resp.copy_to(&mut file).expect("unable to copy data");
+    path
 }
