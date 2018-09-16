@@ -4,7 +4,7 @@ import os
 
 r = sr.Recognizer()
 
-with open("/Users/tvvizzlemac/ShellHacks/shellhacks-2018/src/cred.json") as f:
+with open(os.curdir + "/src/cred.json") as f:
     GOOGLE_CLOUD_SPEECH_CREDENTIALS = f.read()
 
 with sr.Microphone() as source:
