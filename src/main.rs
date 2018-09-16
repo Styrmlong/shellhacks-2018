@@ -1,5 +1,8 @@
+#[macro_use]
+extern crate serde_derive;
+
 use std::fs::File;
-use std::io::{self, Read, StdinLock};
+use std::io::{self, StdinLock};
 use std::path::PathBuf;
 use std::process::Command;
 use structopt::StructOpt;
@@ -34,6 +37,36 @@ struct Opt {
         long = "display"
     )]
     display: String,
+    /// matcher location
+    #[structopt(
+        parse(from_os_str),
+        name = "matcher",
+        default_value = "matcher.json",
+        short = "m",
+        long = "match"
+    )]
+    matcher: PathBuf,
+}
+
+#[derive(Serialize, Deserialize)]
+struct Match {
+    subreddit: String,
+    keywords: Vec<String>,
+}
+
+impl Match {
+    fn is_match(&self, s: &str) -> bool {
+        for m in &self.keywords {
+            if s.contains(m) {
+                return true;
+            }
+        }
+        false
+    }
+
+    fn sub(&self) -> String {
+        self.subreddit.clone()
+    }
 }
 
 fn main() {
@@ -68,8 +101,8 @@ fn get_voice() -> String {
     ).expect("Not UTF8 Text!")
 }
 
-fn get_meme(stdin: &mut StdinLock) -> String {
-    let mut buffer = String::new();
+fn get_meme(_stdin: &mut StdinLock) -> String {
+    //let mut buffer = String::new();
     println!("Please tell me a command :D");
     // call python process
     let voice = get_voice();
@@ -90,24 +123,17 @@ fn get_meme(stdin: &mut StdinLock) -> String {
 }
 
 fn process_meme(usr: String, opt: &Opt) -> String {
+    let matcher = File::open(&opt.matcher).expect("unable to find matcher file");
+    let matcher: Vec<Match> = serde_json::from_reader(matcher).expect("unable to read matcher file");
     let usr = usr.to_lowercase();
 
-    if usr.contains("a meme") {
-        opt.default_meme_src.clone()
-    } else if usr.contains("a dank meme") {
-        String::from("dankmemes")
-    } else if usr.contains("a programmer meme") {
-        String::from("ProgrammerHumor")
-    } else if usr.contains("a d and d meme")
-        || usr.contains("a dnd meme")
-        || usr.contains("adnd meme")
-        || usr.contains("a d&d meme")
-        || usr.contains("ad&d meme")
-    {
-        String::from("dndmemes")
-    } else {
-        opt.default_meme_src.clone()
+    for m in matcher {
+        if m.is_match(&usr) {
+            return m.sub();
+        }
     }
+
+    opt.default_meme_src.clone()
 }
 
 fn get_image_url(sub_reddit: &str) -> String {
