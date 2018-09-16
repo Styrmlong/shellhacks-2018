@@ -1,123 +1,129 @@
 [
-    {
-      "subreddit": "dankmemes",
-      "keywords": [
-        "dank",
-        "a dank meme",
-        "dank memes"
-      ]
-    },
-    {
-      "subreddit": "ProgrammerHumor",
-      "keywords": [
-        "programmer",
-        "programmer memes",
-        "a programmer meme",
-        "programmer hummor"
-      ]
-    },
-    {
-      "subreddit": "dndmemes",
-      "keywords": [
-        "dnd",
-        "dnd meme",
-        "dnd memes",        
-        "a d&d meme",
-        "d&d"
-      ]
-    } ,
-	{
-      "subreddit": "Catmemes",
-      "keywords": [
-        "cat",
-        "a cat meme",
-        "cat memes"
-      ]
-    } ,
-	{
-      "subreddit": "ZeldaMemes",
-      "keywords": [
-        "zelda",
-        "a legend of zelda meme",
-        "legend of zelda",
-        "zelda memes"
-      ]
-    } ,
-	{
-      "subreddit": "memeframe",
-      "keywords": [
-        "warframe",
-        "a warframe meme"
-      ]
-    } ,
-	{
-      "subreddit": "SequelMemes",
-      "keywords": [
-        "star wars",
-        "a star wars meme",
-        "sequel memes"
-      ]
-    },
-    {
-      "subreddit": "unixporn",
-      "keywords": [
-        "porn",
-        "unix",
-        "a unix meme",
-        "a porn meme"
-      ]
-    },
-    {
-      "subreddit": "PrequelMemes",
-      "keywords": [
-        "prequel meme",
-        "star wars",
-        "prequel"
-      ]
-    },
-    {
-      "subreddit": "softwaregore",
-      "keywords": [
-        "softwaregore",
-        "a software meme"
-      ]
-    },
-    {
-      "subreddit": "carporn",
-      "keywords": [
-        "carporn",
-        "car porn"
-      ]
-    },
-    {
-      "subreddit": "natureporn",
-      "keywords": [
-        "hentai",
-        "natureporn",
-        "nature porn"
-      ]
-    },
-    {
-      "subreddit": "DeepFriedMemes",
-      "keywords": [
-        "deep fried memes",
-        "deep-fried",
-        "deep-fried memes",
-        "deep fried meme",
-        "deep fried memes",
-        "deepfriedmemes"
+  {
+    "subreddit": "dankmemes",
+    "keywords": [
+      "dank",
+      "a dank meme",
+      "dank memes"
+    ]
+  },
+  {
+    "subreddit": "ProgrammerHumor",
+    "keywords": [
+      "programmer",
+      "programmer memes",
+      "a programmer meme",
+      "programmer hummor"
+    ]
+  },
+  {
+    "subreddit": "dndmemes",
+    "keywords": [
+      "dnd",
+      "dnd meme",
+      "dnd memes",        
+      "a d&d meme",
+      "d&d"
+    ]
+  } ,
+{
+    "subreddit": "Catmemes",
+    "keywords": [
+      "cat",
+      "a cat meme",
+      "cat memes"
+    ]
+  } ,
+{
+    "subreddit": "ZeldaMemes",
+    "keywords": [
+      "zelda",
+      "a legend of zelda meme",
+      "legend of zelda",
+      "zelda memes"
+    ]
+  } ,
+{
+    "subreddit": "memeframe",
+    "keywords": [
+      "warframe",
+      "a warframe meme"
+    ]
+  } ,
+{
+    "subreddit": "SequelMemes",
+    "keywords": [
+      "star wars",
+      "a star wars meme",
+      "sequel memes"
+    ]
+  },
+  {
+    "subreddit": "unixporn",
+    "keywords": [
+      "porn",
+      "unix",
+      "a unix meme",
+      "a porn meme"
+    ]
+  },
+  {
+    "subreddit": "PrequelMemes",
+    "keywords": [
+      "prequel meme",
+      "star wars",
+      "prequel"
+    ]
+  },
+  {
+    "subreddit": "softwaregore",
+    "keywords": [
+      "softwaregore",
+      "a software meme"
+    ]
+  },
+  {
+    "subreddit": "carporn",
+    "keywords": [
+      "carporn",
+      "car porn"
+    ]
+  },
+  {
+    "subreddit": "natureporn",
+    "keywords": [
+      "hentai",
+      "natureporn",
+      "nature porn"
+    ]
+  },
+  {
+    "subreddit": "DeepFriedMemes",
+    "keywords": [
+      "deep fried memes",
+      "deep-fried",
+      "deep-fried memes",
+      "deep fried meme",
+      "deep fried memes",
+      "deepfriedmemes"
 
-      ]
-    },
-    {
-      "subreddit": "MortyMemes",
-      "keywords": [
-        "rick and morty",
-        "rick and morty meme",
-        "rick and morty memes",
-        "mortymemes",
-        "morty memes"
-      ]
-    }
-
-  ]
+    ]
+  },
+  {
+    "subreddit": "MortyMemes",
+    "keywords": [
+      "rick and morty",
+      "rick and morty meme",
+      "rick and morty memes",
+      "mortymemes",
+      "morty memes"
+    ]
+  },
+{
+    "subreddit": "MemeEconomy",
+    "keywords": [
+      "meme economy",
+      "me the memes"
+    ]
+  } 
+]
