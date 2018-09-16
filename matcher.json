@@ -107,6 +107,7 @@
       "deep fried memes",
       "deepfriedmemes"
 
+<<<<<<< HEAD
     ]
   },
   {
@@ -127,3 +128,25 @@
     ]
   } 
 ]
+=======
+      ]
+    },
+    {
+      "subreddit": "MortyMemes",
+      "keywords": [
+        "rick and morty",
+        "rick and morty meme",
+        "rick and morty memes",
+        "mortymemes",
+        "morty memes"
+      ]
+    },
+	{
+      "subreddit": "MemeEconomy",
+      "keywords": [
+        "meme economy",
+        "me the memes"
+      ]
+    } 
+  ]
+>>>>>>> 47a99da6e130a6ef0981e21b7afa3454cb461c1f
