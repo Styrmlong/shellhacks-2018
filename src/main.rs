@@ -59,7 +59,7 @@ fn main() {
 
 fn get_voice() -> String {
     String::from_utf8(
-        Command::new("python")
+        Command::new("python3")
             .arg("-c")
             .arg(PYTHON)
             .output()
