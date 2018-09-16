@@ -43,11 +43,11 @@ fn main() {
     let mut handle = stdin.lock();
 
     // grab what the user wants to see
-    let _meme = get_meme(&mut handle);
+    let meme = process_meme(get_meme(&mut handle), &opt);
 
     println!("Ok, grabbing your meme now :D");
     // grab the image from imgur
-    let url = get_image_url(&opt.default_meme_src);
+    let url = get_image_url(&meme);
     let file = get_file(&url);
 
     // show it
@@ -87,6 +87,10 @@ fn get_meme(stdin: &mut StdinLock) -> String {
     } else {
         get_meme(stdin)
     }
+}
+
+fn process_meme(usr: String, opt: &Opt) -> String {
+    unimplemented!()
 }
 
 fn get_image_url(sub_reddit: &str) -> String {
