@@ -115,9 +115,10 @@ fn get_voice() -> String {
 
 fn get_meme(_stdin: &mut StdinLock) -> String {
     //let mut buffer = String::new();
-    println!("Please tell me a command :D");
+    println!("Please tell me a meme related command :D");
     // call python process
     let voice = get_voice();
+    print!("{}",voice);
     /*
     // Get python result
     println!("You said: {}", voice);
@@ -142,6 +143,7 @@ fn process_meme(usr: String, opt: &Opt) -> String {
 
     for m in matcher {
         if m.is_match(&usr) {
+            print!("{}", m.sub() + " ");
             return m.sub();
         }
     }

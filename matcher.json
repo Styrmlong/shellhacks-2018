@@ -8,10 +8,16 @@
     ]
   },
   {
-    "subreddit": "memes",
+    "subreddit": "dndmemes",
     "keywords": [
-      "memes",
-      "a meme"
+      "dnd",
+      "dnd meme",
+      "dnd memes",
+      "a d&d meme",
+      "d&d",
+      "D&D memes",
+      "dungeons and dragons memes",
+      "dungeon and dragon memes"
     ]
   },
   {
@@ -21,16 +27,6 @@
       "programmer memes",
       "a programmer meme",
       "programmer hummor"
-    ]
-  },
-  {
-    "subreddit": "dndmemes",
-    "keywords": [
-      "dnd",
-      "dnd meme",
-      "dnd memes",
-      "a d&d meme",
-      "d&d"
     ]
   },
   {
@@ -60,8 +56,7 @@
   {
     "subreddit": "SequelMemes",
     "keywords": [
-      "star wars",
-      "a star wars meme",
+      "sequel",
       "sequel memes"
     ]
   },
@@ -71,29 +66,23 @@
       "porn",
       "unix",
       "a unix meme",
-      "a porn meme"
+      "a porn"
     ]
   },
   {
     "subreddit": "PrequelMemes",
     "keywords": [
-      "prequel meme",
-      "star wars",
-      "prequel"
+      "starwars",
+      "starwar",
+      "prequel",
+      "star wars"
     ]
   },
   {
     "subreddit": "softwaregore",
     "keywords": [
       "softwaregore",
-      "a software meme"
-    ]
-  },
-  {
-    "subreddit": "carporn",
-    "keywords": [
-      "carporn",
-      "car porn"
+      "software"
     ]
   },
   {
@@ -112,17 +101,8 @@
       "deep-fried memes",
       "deep fried meme",
       "deep fried memes",
-      "deepfriedmemes"
-    ]
-  },
-  {
-    "subreddit": "MortyMemes",
-    "keywords": [
-      "rick and morty",
-      "rick and morty meme",
-      "rick and morty memes",
-      "mortymemes",
-      "morty memes"
+      "deepfriedmemes",
+      "deep-fried meme "
     ]
   },
   {
@@ -142,8 +122,9 @@
   {
     "subreddit": "trippinthroughtime",
     "keywords": [
-      "history meme",
-      "an edited meme"
+      "a history meme",
+      "an edited meme",
+      "history"
     ]
   },
   {
@@ -154,7 +135,7 @@
     ]
   },
   {
-    "subreddit": "MortyMemes",
+    "subreddit": "rickandmorty",
     "keywords": [
       "rick and morty",
       "rick and morty meme",
@@ -167,7 +148,16 @@
     "subreddit": "MemeEconomy",
     "keywords": [
       "meme economy",
-      "me the memes"
+      "me the memes",
+      "economy"
+    ]
+  }
+  ,  
+  {
+    "subreddit": "memes",
+    "keywords": [
+      "memes",
+      "a meme"
     ]
   }
 ]
