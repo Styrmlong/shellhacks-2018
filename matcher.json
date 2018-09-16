@@ -125,5 +125,26 @@
         "meme economy",
         "me the memes"
       ]
+    } ,
+	{
+      "subreddit": "wholesomememes",
+      "keywords": [
+        "wholesome",
+        "a wholesome meme"
+      ]
+    } ,
+	{
+      "subreddit": "trippinthroughtime",
+      "keywords": [
+        "history meme",
+        "an edited meme"
+      ]
+    } ,
+	{
+      "subreddit": "fakehistoryporn",
+      "keywords": [
+        "fake history ",
+        "an edited history meme"
+      ]
     } 
   ]
