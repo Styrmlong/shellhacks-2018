@@ -90,7 +90,17 @@ fn get_meme(stdin: &mut StdinLock) -> String {
 }
 
 fn process_meme(usr: String, opt: &Opt) -> String {
-    unimplemented!()
+    if usr.contains("a meme") {
+        opt.default_meme_src.clone()
+    } else if usr.contains("a dank meme") {
+        String::from("dankmemes")
+    } else if usr.contains("a programmer meme") {
+        String::from("ProgrammerHumor")
+    } else if usr.contains("a DnD meme") {
+        String::from("dndmemes")
+    } else {
+        opt.default_meme_src.clone()
+    }
 }
 
 fn get_image_url(sub_reddit: &str) -> String {
