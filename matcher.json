@@ -3,35 +3,44 @@
       "subreddit": "dankmemes",
       "keywords": [
         "dank",
-        "a dank meme"
+        "a dank meme",
+        "dank memes"
       ]
     },
     {
       "subreddit": "ProgrammerHumor",
       "keywords": [
         "programmer",
-        "a programmer meme"
+        "programmer memes",
+        "a programmer meme",
+        "programmer hummor"
       ]
     },
     {
       "subreddit": "dndmemes",
       "keywords": [
         "dnd",
-        "a d&d meme"
+        "dnd meme",
+        "dnd memes",        
+        "a d&d meme",
+        "d&d"
       ]
     } ,
 	{
       "subreddit": "Catmemes",
       "keywords": [
         "cat",
-        "a cat meme"
+        "a cat meme",
+        "cat memes"
       ]
     } ,
 	{
       "subreddit": "ZeldaMemes",
       "keywords": [
         "zelda",
-        "a legend of zelda meme"
+        "a legend of zelda meme",
+        "legend of zelda",
+        "zelda memes"
       ]
     } ,
 	{
@@ -45,7 +54,70 @@
       "subreddit": "SequelMemes",
       "keywords": [
         "star wars",
-        "a star wars meme"
+        "a star wars meme",
+        "sequel memes"
       ]
-    } 
+    },
+    {
+      "subreddit": "unixporn",
+      "keywords": [
+        "porn",
+        "unix",
+        "a unix meme",
+        "a porn meme"
+      ]
+    },
+    {
+      "subreddit": "PrequelMemes",
+      "keywords": [
+        "prequel meme",
+        "star wars",
+        "prequel"
+      ]
+    },
+    {
+      "subreddit": "softwaregore",
+      "keywords": [
+        "softwaregore",
+        "a software meme"
+      ]
+    },
+    {
+      "subreddit": "carporn",
+      "keywords": [
+        "carporn",
+        "car porn"
+      ]
+    },
+    {
+      "subreddit": "natureporn",
+      "keywords": [
+        "hentai",
+        "natureporn",
+        "nature porn"
+      ]
+    },
+    {
+      "subreddit": "DeepFriedMemes",
+      "keywords": [
+        "deep fried memes",
+        "deep-fried",
+        "deep-fried memes",
+        "deep fried meme",
+        "deep fried memes",
+        "deepfriedmemes"
+
+      ]
+    },
+    {
+      "subreddit": "MortyMemes",
+      "keywords": [
+        "rick and morty",
+        "rick and morty meme",
+        "rick and morty memes",
+        "mortymemes",
+        "morty memes"
+      ]
+    }
+
   ]
