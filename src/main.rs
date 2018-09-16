@@ -46,6 +46,9 @@ struct Opt {
         long = "match"
     )]
     matcher: PathBuf,
+    /// switch to use the mac `open` program
+    #[structopt(short = "c", long = "mac")]
+    mac: bool,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -84,10 +87,19 @@ fn main() {
     let file = get_file(&url);
 
     // show it
-    Command::new(&opt.display)
-        .arg(&file)
-        .spawn()
-        .expect("Unable to display meme");
+    if opt.mac {
+        Command::new("open")
+            .arg("-a")
+            .arg(&opt.display)
+            .arg(&file)
+            .spawn()
+            .expect("Unable to display meme");
+    } else {
+        Command::new(&opt.display)
+            .arg(&file)
+            .spawn()
+            .expect("Unable to display meme");
+    }
 }
 
 fn get_voice() -> String {
@@ -124,7 +136,8 @@ fn get_meme(_stdin: &mut StdinLock) -> String {
 
 fn process_meme(usr: String, opt: &Opt) -> String {
     let matcher = File::open(&opt.matcher).expect("unable to find matcher file");
-    let matcher: Vec<Match> = serde_json::from_reader(matcher).expect("unable to read matcher file");
+    let matcher: Vec<Match> =
+        serde_json::from_reader(matcher).expect("unable to read matcher file");
     let usr = usr.to_lowercase();
 
     for m in matcher {
