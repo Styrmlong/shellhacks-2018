@@ -73,7 +73,7 @@ fn get_meme(stdin: &mut StdinLock) -> String {
     println!("Please tell me a command :D");
     // call python process
     let voice = get_voice();
-
+    /*
     // Get python result
     println!("You said: {}", voice);
     // loop until it works
@@ -82,21 +82,28 @@ fn get_meme(stdin: &mut StdinLock) -> String {
         .read_to_string(&mut buffer)
         .expect("unable to read input");
 
-    if buffer.to_lowercase() == "n" {
-        voice
+    if buffer.to_lowercase() == "n" {*/
+    voice /*
     } else {
         get_meme(stdin)
-    }
+    }*/
 }
 
 fn process_meme(usr: String, opt: &Opt) -> String {
+    let usr = usr.to_lowercase();
+
     if usr.contains("a meme") {
         opt.default_meme_src.clone()
     } else if usr.contains("a dank meme") {
         String::from("dankmemes")
     } else if usr.contains("a programmer meme") {
         String::from("ProgrammerHumor")
-    } else if usr.contains("a DnD meme") {
+    } else if usr.contains("a d and d meme")
+        || usr.contains("a dnd meme")
+        || usr.contains("adnd meme")
+        || usr.contains("a d&d meme")
+        || usr.contains("ad&d meme")
+    {
         String::from("dndmemes")
     } else {
         opt.default_meme_src.clone()
