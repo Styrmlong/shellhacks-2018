@@ -81,7 +81,8 @@ fn main() {
     // grab what the user wants to see
     let meme = process_meme(get_meme(&mut handle), &opt);
 
-    println!("Ok, grabbing your meme now :D");
+    print!("{}",get_grabmessage());
+    //println!("Ok, grabbing your meme now :D");
     // grab the image from imgur
     let url = get_image_url(&meme);
     let file = get_file(&url);
@@ -114,14 +115,17 @@ fn get_voice() -> String {
 }
 
 fn get_meme(_stdin: &mut StdinLock) -> String {
+
     //let mut buffer = String::new();
-    println!("Please tell me a meme related command :D");
+    //println!("Please tell me a meme related command :D");
+    print!("{}",get_coolmessageprompt());
     // call python process
     let voice = get_voice();
-    print!("{}",voice);
+    println!("You said: {}", voice);
+    //print!("{}",get_turncool(&voice));
     /*
     // Get python result
-    println!("You said: {}", voice);
+    
     // loop until it works
     print!("Did I get that wrong?: (Y/n)");
     stdin
@@ -147,7 +151,7 @@ fn process_meme(usr: String, opt: &Opt) -> String {
             return m.sub();
         }
     }
-
+    
     opt.default_meme_src.clone()
 }
 
@@ -199,3 +203,24 @@ fn get_file(url: &str) -> PathBuf {
     resp.copy_to(&mut file).expect("unable to copy data");
     path
 }
+
+fn get_coolmessageprompt() -> String {
+    String::from_utf8(
+        Command::new("figlet")
+            .arg("Ask me about memes!")
+            .output()
+            .expect("didnt work")
+            .stdout,
+    ).expect("Not UTF8 Text!")
+}
+
+fn get_grabmessage() -> String {
+    String::from_utf8(
+        Command::new("figlet")
+            .arg("Ok, fetching meme")
+            .output()
+            .expect("didnt work")
+            .stdout,
+    ).expect("Not UTF8 Text!")
+}
+

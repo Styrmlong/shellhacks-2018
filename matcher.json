@@ -1,13 +1,5 @@
 [
   {
-    "subreddit": "dankmemes",
-    "keywords": [
-      "dank",
-      "a dank meme",
-      "dank memes"
-    ]
-  },
-  {
     "subreddit": "dndmemes",
     "keywords": [
       "dnd",
@@ -18,6 +10,116 @@
       "D&D memes",
       "dungeons and dragons memes",
       "dungeon and dragon memes"
+    ]
+  },
+  {
+    "subreddit": "trollface",
+    "keywords": [
+      "trollface",
+      "troll face"
+    ]
+  },
+  {
+    "subreddit": "ForeverAlone",
+    "keywords": [
+      "Forever Alone",
+      "forever alone"
+    ]
+  },
+  {
+    "subreddit": "doge",
+    "keywords": [
+      "doge"
+    ]
+  },
+  {
+    "subreddit": "youdontsay",
+    "keywords": [
+      "you don't say"
+    ]
+  },
+  {
+    "subreddit": "ScumbagSteve",
+    "keywords": [
+      "Scumbag Steve",
+      "scumbag steve"
+    ]
+  },
+  {
+    "subreddit": "Badluckbrian",
+    "keywords": [
+      "brian",
+      "Brian",
+      "bryan"
+    ]
+  },
+  {
+    "subreddit": "wat",
+    "keywords": [
+      "wat",
+      "what"
+    ]
+  },
+  {
+    "subreddit": "nyancat",
+    "keywords": [
+      "nyancat",
+      "nyan",
+      "nyan cat"
+    ]
+  },
+  {
+    "subreddit": "GrumpyCat",
+    "keywords": [
+      "Grumpy",
+      "grumpy"
+    ]
+  },
+  {
+    "subreddit": "Kappa",
+    "keywords": [
+      "kappa"
+    ]
+  },
+  {
+    "subreddit": "ayylmao",
+    "keywords": [
+      "alien"
+    ]
+  },
+  {
+    "subreddit": "pepethefrog",
+    "keywords": [
+      "pepe"
+    ]
+  },
+  {
+    "subreddit": "DatBoi",
+    "keywords": [
+      "Dat Boi",
+      "that boy"
+    ]
+  },
+  {
+    "subreddit": "DoYouKnowDaWey",
+    "keywords": [
+      "Ugandan knuckles",
+      "Uganda knuckles",
+      "knuckles",
+      "do you know the way "
+    ]
+  },
+  {
+    "subreddit": "Spooderman",
+    "keywords": [
+      "Spooderman",
+      "spooderman"
+    ]
+  },
+  {
+    "subreddit": "dolan",
+    "keywords": [
+      "dolan"
     ]
   },
   {
@@ -106,6 +208,53 @@
     ]
   },
   {
+    "subreddit": "space_memes",
+    "keywords": [
+      "space",
+      "a space meme",
+      "space memes"
+    ]
+  },
+  {
+    "subreddit": "Seacows",
+    "keywords": [
+      "seacows",
+      "manatee",
+      "manatees",
+      "a manatee meme"
+    ]
+  },
+  {
+    "subreddit": "penguin",
+    "keywords": [
+      "penguin",
+      "penguins"
+    ]
+  },
+  {
+    "subreddit": "BikiniBottomTwitter",
+    "keywords": [
+      "spongebob",
+      "patrick",
+      "bikini bottom"
+    ]
+  },
+  {
+    "subreddit": "wholesomedogmemes",
+    "keywords": [
+      "dog",
+      "dogs"
+    ]
+  },
+  {
+    "subreddit": "Coffee",
+    "keywords": [
+      "coffee",
+      "no sleep",
+      "energy"
+    ]
+  },
+  {
     "subreddit": "MemeEconomy",
     "keywords": [
       "meme economy",
@@ -145,14 +294,19 @@
     ]
   },
   {
-    "subreddit": "MemeEconomy",
+    "subreddit": "Art",
     "keywords": [
-      "meme economy",
-      "me the memes",
-      "economy"
+      "art"
     ]
-  }
-  ,  
+  },
+  {
+    "subreddit": "dankmemes",
+    "keywords": [
+      "dank",
+      "a dank meme",
+      "dank memes"
+    ]
+  },
   {
     "subreddit": "memes",
     "keywords": [
